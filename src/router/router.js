@@ -1,14 +1,14 @@
-import App from '../App'
-const list = r => require.ensure([], () => r(require('../pages/list')), 'list')
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import City from '../pages/city/city'
+import List from '../pages/list/list'
 
-export default [{
-    path: '/',
-    component: App, //顶层路由，对应index.html
-    children: [ //二级路由。对应App.vue
-        //首页城市列表页
-        {
-            path: '/list',
-            component: list
-        },
+Vue.use(VueRouter)
+
+export default new VueRouter({
+    routes: [
+        {path: '/', component: List},
+        {path: '/list', component: List},
+        {path: '/City', component: City}
     ]
-}]
+})
