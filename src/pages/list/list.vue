@@ -1,16 +1,22 @@
 <template>
-  <div id="List">
-    <span>list</span>
-    <router-link to="/city">列表页面</router-link>
-  </div>
+    <div id="List">
+        <headerHome></headerHome>
+        <span>list</span>
+        <router-link to="/city">列表页面</router-link>
+    </div>
 </template>
 
 <script>
+import headerHome from '@/components/header'
+
 export default {
-  name: 'List'
+  name: 'List',
+  components: {
+      headerHome
+  }
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>
