@@ -15,20 +15,10 @@
                         </router-link>
                     </div>
                 </div>
-                <div class="scene-item">
-                    <h3>张三丰.网址</h3>
-                    <p class="time">2018-10-22 至 2019-10-22 </p>
-                    <div class="operation">
-                        <ul>
-                            <li><router-link to="/city">轻松绑定</router-link></li>
-                            <li><router-link to="/city">创新空间</router-link></li>
-                            <li><router-link to="/city">网址信息</router-link></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="scene-item">
-                    <h3>张三丰.网址</h3>
-                    <p class="time">2018-10-22 至 2019-10-22 </p>
+
+                <div class="scene-item" v-for="(item,index) of list">
+                    <h3>{{item.name}}.网址</h3>
+                    <p class="time">{{item.times}}</p>
                     <div class="operation">
                         <ul>
                             <li><router-link to="/city">轻松绑定</router-link></li>
@@ -55,6 +45,14 @@
         components: {
             headerHome,
             navbar
+        },
+        data: function () {
+            return {
+                list: [
+                    {name:'战三','times':'2018-10-22 至 2019-10-22'},
+                    {name:'张三丰','times':'2019-11-02 至 2019-10-22'}
+                ]
+            }
         }
     }
 </script>
