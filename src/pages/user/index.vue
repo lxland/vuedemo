@@ -8,8 +8,16 @@
                 <h2>我的网址</h2>
 
                 <div class="scene-item">
+                    <div class="addscene">
+                        <router-link to="/city">
+                            <p>+</p>
+                            <p>查询网址</p>
+                        </router-link>
+                    </div>
+                </div>
+                <div class="scene-item">
                     <h3>张三丰.网址</h3>
-                    <p>2018-10-22 至 2019-10-22 </p>
+                    <p class="time">2018-10-22 至 2019-10-22 </p>
                     <div class="operation">
                         <ul>
                             <li><router-link to="/city">轻松绑定</router-link></li>
@@ -20,7 +28,7 @@
                 </div>
                 <div class="scene-item">
                     <h3>张三丰.网址</h3>
-                    <p>2018-10-22 至 2019-10-22 </p>
+                    <p class="time">2018-10-22 至 2019-10-22 </p>
                     <div class="operation">
                         <ul>
                             <li><router-link to="/city">轻松绑定</router-link></li>
@@ -75,7 +83,6 @@
         border-radius: 4px;
         overflow: hidden;
         float: left;
-        margin-bottom: 24px;
         background-color: #fff;
         position: relative;
         margin:20px;
@@ -86,7 +93,7 @@
         font-size: 22px;
         padding:40px 0 0;
     }
-    .scene-item p {
+    .scene-item p.time {
         font-size: 12px;
         color: #999999;
         padding:0;
@@ -113,6 +120,26 @@
     }
     .operation {
         margin-top: 20px;
+    }
+    .addscene a {
+        display: inline-block;
+        width: 200px;
+        height: 200px;
+        border: 1px solid #e6ebed;
+        border-radius: 3px;
+        margin-top: 23px;
+        font-size: 14px;
+        font-weight: normal;
+    }
+    .addscene a {
+        padding-top: 80px;
+    }
+    .addscene a:hover {
+        color: #1593ff;
+        border-color: #1593ff;
+    }
+    .addscene a:hover p {
+        color: #1593ff;
     }
 
 </style>
