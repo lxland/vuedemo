@@ -16,7 +16,7 @@
                     </div>
                 </div>
 
-                <div class="scene-item" v-for="(item,index) of list">
+                <div class="scene-item" v-for="(item, index) of list">
                     <h3>{{item.name}}.网址</h3>
                     <p class="time">{{item.times}}</p>
                     <div class="operation">
@@ -28,17 +28,20 @@
                     </div>
                 </div>
 
+                <div class="scene-city" v-for="(item, index) of guessCity">
+                    <p>{{item.productName}} ----  {{item.prodcutPrice}}</p>
+                </div>
+
             </div>
 
         </div>
-
-        <router-view/>
     </div>
 </template>
 
 <script>
     import headerHome from '@/components/header'
     import navbar from '@/components/nav'
+    import axios from 'axios'
 
     export default {
         name: 'userIndex',
@@ -51,9 +54,27 @@
                 list: [
                     {name:'战三','times':'2018-10-22 至 2019-10-22'},
                     {name:'张三丰','times':'2019-11-02 至 2019-10-22'}
-                ]
+                ],
+                city: [
+                    {id:'001',name:'北京',pro:'京'},
+                    {id:'002',name:'山西',pro:'晋'}
+                ],
+                guessCity:[]
             }
+        },
+        methods: {
+            getHomeInfoSucc (res) {
+                console.log(res,res.data.result);
+                this.guessCity = res.data.result
+            },
+            getHomeInfo () {
+                axios.get('http://localhost:8080/index.json').then(this.getHomeInfoSucc)
+            }
+        },
+        mounted () {
+            this.getHomeInfo()
         }
+
     }
 </script>
 

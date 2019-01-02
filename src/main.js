@@ -6,8 +6,11 @@ import router from './router/router'
 import './assets/styles/reset.css'
 import './assets/styles/border.css'
 import './assets/styles/iconfont.css'
+import VueResource from 'vue-resource'
 
 Vue.config.productionTip = false
+
+Vue.use(VueResource)
 
 new Vue({
   render: h => h(App),
