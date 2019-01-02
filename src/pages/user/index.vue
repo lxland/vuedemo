@@ -16,9 +16,9 @@
                     </div>
                 </div>
 
-                <div class="scene-item" v-for="(item, index) of list">
+                <div class="scene-item" v-for="(item, index) of wzname">
                     <h3>{{item.name}}.网址</h3>
-                    <p class="time">{{item.times}}</p>
+                    <p class="time">{{item.time}}</p>
                     <div class="operation">
                         <ul>
                             <li><router-link to="/city">轻松绑定</router-link></li>
@@ -59,13 +59,15 @@
                     {id:'001',name:'北京',pro:'京'},
                     {id:'002',name:'山西',pro:'晋'}
                 ],
-                guessCity:[]
+                guessCity:[],
+                wzname:[]
             }
         },
         methods: {
             getHomeInfoSucc (res) {
-                console.log(res,res.data.result);
+                // console.log(res,res.data.result,res.data.wangzhi);
                 this.guessCity = res.data.result
+                this.wzname = res.data.wangzhi
             },
             getHomeInfo () {
                 axios.get('http://localhost:8080/index.json').then(this.getHomeInfoSucc)
