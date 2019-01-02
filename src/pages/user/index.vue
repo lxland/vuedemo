@@ -21,7 +21,7 @@
                     <p class="time">{{item.time}}</p>
                     <div class="operation">
                         <ul>
-                            <li><router-link to="/city">轻松绑定</router-link></li>
+                            <li><router-link to="/mineBinding">轻松绑定</router-link></li>
                             <li><router-link to="/city">创新空间</router-link></li>
                             <li><router-link to="/city">网址信息</router-link></li>
                         </ul>

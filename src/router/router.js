@@ -12,5 +12,6 @@ export default new VueRouter({
         {path: '/list', component: List},
         {path: '/City', component: City},
         {path: '/user', component: user}
+
     ]
 })
