@@ -70,7 +70,7 @@
                 this.wzname = res.data.wangzhi
             },
             getHomeInfo () {
-                axios.get('http://localhost:8080/index.json').then(this.getHomeInfoSucc)
+                axios.get('/index.json').then(this.getHomeInfoSucc)
             }
         },
         mounted () {
