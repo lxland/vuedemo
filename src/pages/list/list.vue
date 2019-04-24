@@ -3,7 +3,7 @@
         <headerHome></headerHome>
         <navbar></navbar>
         <span>list</span>
-        <router-link to="/city">列表页面</router-link>
+        <router-link to="/city">列表页面000</router-link>
     </div>
 </template>
 
